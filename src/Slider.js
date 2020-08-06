@@ -238,7 +238,7 @@ export default class Slider extends PureComponent {
       thumbTouchSize,
       animationType,
       animateTransitions,
-      children
+      children,
       ...other
     } = this.props;
     const {

@@ -162,6 +162,11 @@ export default class Slider extends PureComponent {
      * Custom Animation type. 'spring' or 'timing'.
      */
     animationType: PropTypes.oneOf(['spring', 'timing']),
+    
+     /**
+     * Used to wrap thumb view in another component, or to replace it with a custom view .
+     */
+    children : any,
 
     /**
      * Used to configure the animation parameters.  These are the same parameters in the Animated library.
@@ -214,6 +219,8 @@ export default class Slider extends PureComponent {
     }
   }
 
+ 
+
   render() {
     const {
       minimumValue,
@@ -231,6 +238,7 @@ export default class Slider extends PureComponent {
       thumbTouchSize,
       animationType,
       animateTransitions,
+      children
       ...other
     } = this.props;
     const {
@@ -300,6 +308,7 @@ export default class Slider extends PureComponent {
           ]}
         >
           {this._renderThumbImage()}
+           {children}
         </Animated.View>
         <View
           renderToHardwareTextureAndroid
